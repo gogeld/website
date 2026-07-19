@@ -55,6 +55,12 @@
     const submitButton = contactForm.querySelector('[data-submit-button]');
     const submitLabel = contactForm.querySelector('[data-submit-label]');
     const defaultLabel = submitLabel?.textContent || 'Send inquiry';
+    const returnedFromSubmission = new URLSearchParams(window.location.search).get('sent') === '1';
+
+    if (returnedFromSubmission) {
+      status.textContent = 'Thanks—your inquiry is on its way. I’ll follow up directly.';
+      window.history.replaceState({}, '', `${window.location.pathname}#contact`);
+    }
 
     contactForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -70,6 +76,7 @@
       const endpoint = contactForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
       const formData = new FormData(contactForm);
       const payload = Object.fromEntries(formData.entries());
+      let usingNativeFallback = false;
 
       try {
         const response = await fetch(endpoint, {
@@ -90,12 +97,15 @@
         contactForm.reset();
         status.textContent = 'Thanks—your inquiry is on its way. I’ll follow up directly.';
       } catch (error) {
-        status.textContent = 'The message could not be sent. Please try again in a moment.';
-        status.classList.add('is-error');
+        usingNativeFallback = true;
+        status.textContent = 'Opening secure delivery…';
+        contactForm.submit();
       } finally {
-        submitButton.disabled = false;
-        submitButton.removeAttribute('aria-busy');
-        submitLabel.textContent = defaultLabel;
+        if (!usingNativeFallback) {
+          submitButton.disabled = false;
+          submitButton.removeAttribute('aria-busy');
+          submitLabel.textContent = defaultLabel;
+        }
       }
     });
   }
