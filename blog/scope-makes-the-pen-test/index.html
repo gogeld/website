@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="A practical penetration-test scope starts with the decision the test must inform, then defines boundaries, depth, evidence, and retesting.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Scope makes the pen test — Derryle Gogel">
+    <meta property="og:description" content="The quality of a penetration test is shaped before testing begins.">
+    <meta property="og:url" content="https://www.derryle.com/blog/scope-makes-the-pen-test/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2025-01-16">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/scope-makes-the-pen-test/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Scope makes the pen test",
+        "description": "The quality of a penetration test is shaped before testing begins.",
+        "datePublished": "2025-01-16",
+        "dateModified": "2025-01-16",
+        "mainEntityOfPage": "https://www.derryle.com/blog/scope-makes-the-pen-test/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Scope Makes the Pen Test — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Penetration testing<time datetime="2025-01-16">January 16, 2025</time></p>
+            <div>
+              <h1>Scope makes the pen test</h1>
+              <p class="article-deck">The quality of a penetration test is shaped before testing begins—by the question it is meant to answer.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>“Test this application” sounds like a scope, but it leaves the important decisions unresolved. Should the test assess anonymous exposure, authenticated abuse, cloud control paths, internal trust, or all of them? Is the goal release confidence, regulatory evidence, or a realistic view of compromise?</p>
+
+            <p>A list of IP addresses and URLs establishes boundaries. A useful scope establishes intent.</p>
+
+            <h2>Start with the decision</h2>
+            <p>Ask what will change after the report. A product team preparing a release needs different evidence than an infrastructure team evaluating lateral movement. An organization testing detection needs different rules than one protecting a fragile production service.</p>
+
+            <p>The answer shapes test depth, access level, timing, and reporting. It also gives the final readout a standard more meaningful than the number of findings.</p>
+
+            <h2>Describe the environment around the target</h2>
+            <p>Applications depend on identity providers, APIs, object storage, pipelines, and administrative surfaces. Excluding every dependency can make a test safe but artificial. Including everything without understanding ownership can make it reckless.</p>
+
+            <p>Document trust boundaries, third parties, sensitive data, production constraints, and who can authorize changes to scope. Be explicit about social engineering, persistence, destructive actions, denial of service, and access to customer data. Ambiguity is not flexibility when the test is active.</p>
+
+            <div class="article-callout">
+              <p>Good rules of engagement let the tester move decisively without making the organization guess what is happening.</p>
+            </div>
+
+            <h2>Choose depth over surface area</h2>
+            <p>A large scope can produce shallow coverage. If the important question involves identity escalation or tenant separation, reserve time to follow those paths. Define test accounts, roles, and representative data before the window opens.</p>
+
+            <p>Also identify stopping conditions. Demonstrating access to a protected record may be sufficient; downloading the full dataset rarely adds value. Proving that a role can be assumed may be enough without changing production configuration.</p>
+
+            <h2>Plan the finish before the start</h2>
+            <p>Agree on escalation contacts, critical-finding notification, evidence handling, and the format of the technical debrief. Include retesting while context is still fresh. A fix that has not been verified remains an assumption.</p>
+
+            <p>The strongest scope gives both sides clarity: what question matters, which paths are in play, how far proof should go, and what a successful test will teach. That clarity creates room for deeper testing and a report built around decisions rather than inventory.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../">Return to all field notes <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

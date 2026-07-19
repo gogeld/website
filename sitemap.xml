@@ -2,5 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.derryle.com/</loc>
+    <lastmod>2026-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/</loc>
+    <lastmod>2026-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/attack-paths-are-stories/</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/cloud-guardrails-teams-use/</loc>
+    <lastmod>2026-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/make-failure-legible/</loc>
+    <lastmod>2026-01-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/identity-is-infrastructure/</loc>
+    <lastmod>2025-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/first-hour-linux-incident/</loc>
+    <lastmod>2025-07-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/terraform-drift-is-a-signal/</loc>
+    <lastmod>2025-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.derryle.com/blog/scope-makes-the-pen-test/</loc>
+    <lastmod>2025-01-16</lastmod>
   </url>
 </urlset>

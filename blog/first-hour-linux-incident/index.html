@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="A calm, evidence-minded framework for the first hour of a Linux incident: establish scope, preserve context, contain deliberately, and keep a timeline.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The first hour of a Linux incident — Derryle Gogel">
+    <meta property="og:description" content="Start by reducing uncertainty without destroying the evidence needed to explain what happened.">
+    <meta property="og:url" content="https://www.derryle.com/blog/first-hour-linux-incident/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2025-07-17">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/first-hour-linux-incident/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The first hour of a Linux incident",
+        "description": "Start by reducing uncertainty without destroying the evidence needed to explain what happened.",
+        "datePublished": "2025-07-17",
+        "dateModified": "2025-07-17",
+        "mainEntityOfPage": "https://www.derryle.com/blog/first-hour-linux-incident/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>The First Hour of a Linux Incident — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems engineering<time datetime="2025-07-17">July 17, 2025</time></p>
+            <div>
+              <h1>The first hour of a Linux incident</h1>
+              <p class="article-deck">Start by reducing uncertainty without destroying the evidence needed to explain what happened.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>5 minutes</span></aside>
+          <div class="article-prose">
+            <p>The first hour of an incident rewards calm more than cleverness. Restarting a service, deleting a suspicious file, or terminating a host may feel decisive, but each action changes the scene. Sometimes that trade is necessary. It should always be deliberate.</p>
+
+            <h2>Establish the clock and the consequence</h2>
+            <p>Write down when the issue was detected, the system time, who is coordinating, and what users or services are affected. A shared timeline prevents scattered observations from becoming contradictory memories.</p>
+
+            <p>Separate confirmed facts from working hypotheses. “Outbound traffic increased at 14:12” is a fact. “The host is exfiltrating data” is a hypothesis that should drive collection and containment decisions, not be recorded as a conclusion.</p>
+
+            <h2>Preserve volatile context</h2>
+            <p>Before changing state, capture what will disappear first: active processes and their ancestry, current network connections, logged-in sessions, open files, mounted filesystems, memory if the response plan supports it, and recent authentication and service events.</p>
+
+            <p>Record collection times and hash exported evidence. Avoid installing an unfamiliar toolkit directly on the affected host if a trusted response mechanism already exists. The goal is a defensible snapshot, not an exhaustive forensic image in the opening minutes.</p>
+
+            <div class="article-callout">
+              <p>Containment is a risk decision: balance the harm still occurring against the context an action will erase.</p>
+            </div>
+
+            <h2>Compare the host to what should be true</h2>
+            <p>A baseline gives observations meaning. Which services belong on the host? Which users should log in? Which packages and timers are expected? What changed in configuration management or deployment history?</p>
+
+            <p>Look for mismatches across process execution, authentication, persistence mechanisms, and network behavior. One odd artifact may be normal. Several artifacts aligned on the same timeline become a stronger explanation.</p>
+
+            <h2>Contain with a return path</h2>
+            <p>Isolation can stop active harm, but know how responders will retain access and how dependent services will behave. Rotate exposed credentials from a clean system, not from the suspected host. If a rebuild is the recovery plan, preserve the evidence and configuration context needed to understand the root cause before replacement.</p>
+
+            <h2>Leave the next responder a clean handoff</h2>
+            <p>At the end of the first hour, summarize impact, evidence collected, actions taken, open questions, and the next decision point. Include what has not been checked. A strong handoff keeps the investigation moving without turning assumptions into facts.</p>
+
+            <p>The first hour will not answer everything. It should make the second hour better: less uncertain, more coordinated, and grounded in evidence that still exists.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../terraform-drift-is-a-signal/">Next note: Terraform drift is a signal <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

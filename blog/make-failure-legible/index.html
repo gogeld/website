@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Reliable systems make failure understandable by preserving context, surfacing useful signals, and designing recovery paths before an incident.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Make failure legible — Derryle Gogel">
+    <meta property="og:description" content="Reliable systems do not avoid every failure; they make failure understandable while there is still time to act.">
+    <meta property="og:url" content="https://www.derryle.com/blog/make-failure-legible/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2026-01-22">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/make-failure-legible/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Make failure legible",
+        "description": "Reliable systems do not avoid every failure; they make failure understandable while there is still time to act.",
+        "datePublished": "2026-01-22",
+        "dateModified": "2026-01-22",
+        "mainEntityOfPage": "https://www.derryle.com/blog/make-failure-legible/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Make Failure Legible — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems engineering<time datetime="2026-01-22">January 22, 2026</time></p>
+            <div>
+              <h1>Make failure legible</h1>
+              <p class="article-deck">Reliable systems do not avoid every failure; they make failure understandable while there is still time to act.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>During an incident, ambiguity consumes time. A service is unhealthy, but the alert does not say which user path is affected. A log records an error, but not the request or dependency that produced it. A dashboard shows saturation, but not what changed before the climb.</p>
+
+            <p>Reliability improves when the system explains itself. That begins long before an alert fires.</p>
+
+            <h2>Preserve the thread of a request</h2>
+            <p>A request often crosses an edge, an application, a queue, a worker, and a database. Each component may be observable on its own while the end-to-end transaction remains invisible. Consistent correlation identifiers, structured events, and trace context preserve that thread.</p>
+
+            <p>The useful question is not “Do we have logs?” It is “Can an operator move from a user symptom to the responsible dependency without guessing?” If the answer is no, more log volume may only create a larger search problem.</p>
+
+            <h2>Alert on outcomes and constraints</h2>
+            <p>Component metrics matter, but an alert should describe something an operator can reason about. Error-budget burn, failed transactions, queue age, and exhausted capacity usually carry more meaning than a single CPU threshold.</p>
+
+            <div class="article-callout">
+              <p>The best signal narrows the search. It says what is failing, for whom, and how quickly the situation is getting worse.</p>
+            </div>
+
+            <p>Every page also needs an owner and a first move. If nobody can say what action an alert invites, it is probably a dashboard observation rather than an interrupt.</p>
+
+            <h2>Make change visible</h2>
+            <p>Many incidents begin with a change: a deployment, a configuration update, a rotated secret, a network rule, or a dependency release. Put those events on the same timeline as service health. Record who or what made the change and preserve the diff where practical.</p>
+
+            <p>This is not only for rollback. Change context helps responders form and reject hypotheses quickly, which is the core loop of incident work.</p>
+
+            <h2>Design recovery as a normal operation</h2>
+            <p>A recovery path that exists only in a document will surprise you when it is needed. Exercise restores, failovers, traffic shifts, and credential rotation. Keep the path small enough that someone other than its author can use it under pressure.</p>
+
+            <p>A legible system gives operators evidence instead of folklore. It connects symptoms to dependencies, changes to consequences, and runbooks to tested actions. Failure may still happen, but it no longer has to arrive as a mystery.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../identity-is-infrastructure/">Next note: Identity is infrastructure <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

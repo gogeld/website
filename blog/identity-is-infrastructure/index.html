@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Why identities, roles, credentials, and trust relationships should be engineered and operated as core infrastructure.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Identity is infrastructure — Derryle Gogel">
+    <meta property="og:description" content="Identity is the control plane connecting people, automation, data, and cloud resources.">
+    <meta property="og:url" content="https://www.derryle.com/blog/identity-is-infrastructure/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2025-10-09">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/identity-is-infrastructure/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Identity is infrastructure",
+        "description": "Identity is the control plane connecting people, automation, data, and cloud resources.",
+        "datePublished": "2025-10-09",
+        "dateModified": "2025-10-09",
+        "mainEntityOfPage": "https://www.derryle.com/blog/identity-is-infrastructure/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Identity Is Infrastructure — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Cybersecurity<time datetime="2025-10-09">October 9, 2025</time></p>
+            <div>
+              <h1>Identity is infrastructure</h1>
+              <p class="article-deck">Identity is the control plane connecting people, automation, data, and cloud resources. It deserves the same engineering discipline as any production platform.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>In a modern environment, network location says less about trust than identity does. A workload assumes a role, a deployment pipeline presents a token, an operator elevates for a task, and a service calls another service. These are infrastructure events even when no server is provisioned.</p>
+
+            <p>Treating identity as a collection of account settings misses the system that those events create.</p>
+
+            <h2>Model relationships, not just accounts</h2>
+            <p>An inventory can tell you that an identity exists. A relationship model tells you what it can become. Which groups grant roles? Which roles can assume other roles? Which service account can read a secret that unlocks a different environment? Which workflow can modify the code that receives production credentials?</p>
+
+            <p>That graph matters to defenders and attackers for the same reason: effective privilege is often the product of a chain, not a single permission.</p>
+
+            <div class="article-callout">
+              <p>Least privilege is not a property of one policy. It is a property of the complete path from identity to consequence.</p>
+            </div>
+
+            <h2>Give workload identity first-class treatment</h2>
+            <p>Human access usually receives the clearer lifecycle: join, change roles, leave. Workload identities tend to accumulate quietly. They outlive applications, inherit broad permissions, and rely on credentials nobody wants to rotate.</p>
+
+            <p>Prefer short-lived, context-bound credentials. Give each workload an owner and purpose. Keep trust policies narrow enough that a compromised pipeline, namespace, or repository cannot impersonate unrelated services. Then monitor actual use so unused privilege becomes visible.</p>
+
+            <h2>Design privilege to decay</h2>
+            <p>Permanent administrative access turns yesterday’s requirement into today’s attack surface. Time-bound elevation, approval context, and automatic expiration make privilege reflect a task instead of a job title.</p>
+
+            <p>Emergency access should follow the same principle. Break-glass identities need strong authentication, tightly controlled credentials, immediate alerting, and routine testing. An emergency path is part of the production system; if it is never exercised, it is only a theory.</p>
+
+            <h2>Operate identity like a platform</h2>
+            <p>Identity configuration should be versioned where possible, reviewed like code, tested for dangerous combinations, and observed at runtime. Ownership, change history, rollback, and service-level expectations all apply.</p>
+
+            <p>When identity is engineered as infrastructure, access becomes easier to reason about and harder to accumulate silently. That clarity improves security, but it also makes delivery and incident response faster—which is what good infrastructure tends to do.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../first-hour-linux-incident/">Next note: The first hour of a Linux incident <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>
