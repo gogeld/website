@@ -20,6 +20,6 @@ GitHub Pages publishes the repository root automatically whenever `main` is upda
 
 - Page content and links: `index.html`
 - Visual styling and responsive behavior: `styles.css`
-- Lightweight scroll and reveal behavior: `script.js`
+- Lightweight scroll, reveal, and contact-form behavior: `script.js`
 - Social sharing artwork: `assets/social-card.svg` and `assets/social-card.png`
 - Custom domain: `CNAME`
