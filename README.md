@@ -14,7 +14,7 @@ Then open `http://localhost:8080`.
 
 ## Publishing
 
-Pushes to `main` deploy automatically through the GitHub Pages workflow in `.github/workflows/pages.yml`.
+GitHub Pages publishes the repository root automatically whenever `main` is updated.
 
 ## Updating content
 
@@ -22,3 +22,4 @@ Pushes to `main` deploy automatically through the GitHub Pages workflow in `.git
 - Visual styling and responsive behavior: `styles.css`
 - Lightweight scroll and reveal behavior: `script.js`
 - Social sharing artwork: `assets/social-card.svg` and `assets/social-card.png`
+- Custom domain: `CNAME`
