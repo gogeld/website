@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0v56" fill="none" stroke="#252c3d" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="75%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#3157ff" stop-opacity=".23"/>
+      <stop offset="1" stop-color="#3157ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0c101c"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="72" y="64" width="54" height="54" fill="#3157ff"/>
+  <text x="99" y="98" fill="#fff" font-family="ui-monospace, monospace" font-size="15" font-weight="700" text-anchor="middle">DG</text>
+  <text x="148" y="98" fill="#dbe1ef" font-family="Arial, sans-serif" font-size="22" font-weight="700">Derryle Gogel</text>
+  <text x="72" y="294" fill="#fff" font-family="Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-4">Secure systems.</text>
+  <text x="72" y="378" fill="#6f8aff" font-family="Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-4">Resilient cloud.</text>
+  <line x1="72" y1="474" x2="1128" y2="474" stroke="#313a50"/>
+  <text x="72" y="532" fill="#aab3c6" font-family="ui-monospace, monospace" font-size="17" font-weight="600" letter-spacing="2">CYBERSECURITY  ·  SYSTEMS ENGINEERING  ·  CLOUD ENGINEERING</text>
+  <circle cx="1038" cy="168" r="54" fill="#3157ff"/>
+  <circle cx="1038" cy="168" r="72" fill="none" stroke="#6580ff" stroke-dasharray="5 8"/>
+  <circle cx="923" cy="101" r="26" fill="#121827" stroke="#5d6881"/>
+  <circle cx="1110" cy="277" r="26" fill="#121827" stroke="#5d6881"/>
+  <circle cx="907" cy="288" r="26" fill="#121827" stroke="#5d6881"/>
+  <path d="m923 101 115 67 72 109M1038 168 907 288M907 288l203-11" fill="none" stroke="#6079ef" stroke-dasharray="4 6"/>
+</svg>
