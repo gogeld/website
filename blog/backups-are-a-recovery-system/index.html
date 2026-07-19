@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Backups create copies; recovery requires tested restores, dependency order, protected access, and clear objectives.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Backups are a recovery system — Derryle Gogel">
+    <meta property="og:description" content="A successful backup job is only one component of a dependable recovery path.">
+    <meta property="og:url" content="https://www.derryle.com/blog/backups-are-a-recovery-system/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2024-07-18">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/backups-are-a-recovery-system/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Backups are a recovery system",
+        "description": "A successful backup job is only one component of a dependable recovery path.",
+        "datePublished": "2024-07-18",
+        "dateModified": "2024-07-18",
+        "mainEntityOfPage": "https://www.derryle.com/blog/backups-are-a-recovery-system/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Backups Are a Recovery System — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems engineering<time datetime="2024-07-18">July 18, 2024</time></p>
+            <div>
+              <h1>Backups are a recovery system</h1>
+              <p class="article-deck">A successful backup job is only one component of a dependable recovery path.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>A green backup dashboard answers a narrow question: did the job produce a copy? Recovery asks harder questions. Is the copy complete, can it be trusted, can the organization access it during the incident, and can the service be reconstructed within the time the business can tolerate?</p>
+
+            <h2>Start with the recovery objective</h2>
+            <p>Recovery-point and recovery-time objectives should describe the service, not the backup product. A database may restore in twenty minutes while DNS, identity, encryption keys, network policy, and application configuration take hours to rebuild. Measure the whole path to a working user outcome.</p>
+
+            <p>Not every dependency needs the same objective. Identify the minimum service that must return first, then sequence the remaining capabilities. This makes the plan smaller and the first recovery decision clearer.</p>
+
+            <h2>Protect the recovery plane</h2>
+            <p>Backup administration should not share the same trust path as production administration. Use separate identities, strong authentication, restricted deletion, immutable or logically isolated copies, and alerts on policy changes. An attacker with production control should still face a new boundary before reaching recovery data.</p>
+
+            <div class="article-callout">
+              <p>A backup that can be erased through the same compromised identity is part of the incident, not the recovery.</p>
+            </div>
+
+            <h2>Restore on a schedule</h2>
+            <p>Testing only the file or database restore misses integration failure. Regularly rebuild a representative service in a clean environment. Verify data integrity, application behavior, credentials, observability, and access for the people who must operate it.</p>
+
+            <p>Vary the exercise. Assume the primary cloud account is unavailable. Assume the most experienced operator is absent. Assume the latest copy is corrupt. Each constraint finds a different dependency hiding in the plan.</p>
+
+            <h2>Keep evidence from every exercise</h2>
+            <p>Record elapsed time, manual steps, missing permissions, stale documentation, and decisions that required special knowledge. Turn the results into engineering work and repeat the scenario after meaningful changes.</p>
+
+            <p>Recovery confidence comes from practiced capability, not retained data alone. The copies matter, but the system that can turn those copies back into a service is what the organization is depending on.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../secrets-should-have-short-stories/">Next note: Secrets should have short stories <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

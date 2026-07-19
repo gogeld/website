@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="System hardening succeeds when controls reflect the threat model, preserve service contracts, and can be tested and operated at scale.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hardening without breaking operations — Derryle Gogel">
+    <meta property="og:description" content="A secure baseline must remain understandable, deployable, and supportable.">
+    <meta property="og:url" content="https://www.derryle.com/blog/hardening-without-breaking-operations/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2022-04-14">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/hardening-without-breaking-operations/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hardening without breaking operations",
+        "description": "A secure baseline must remain understandable, deployable, and supportable.",
+        "datePublished": "2022-04-14",
+        "dateModified": "2022-04-14",
+        "mainEntityOfPage": "https://www.derryle.com/blog/hardening-without-breaking-operations/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Hardening Without Breaking Operations — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems security<time datetime="2022-04-14">April 14, 2022</time></p>
+            <div>
+              <h1>Hardening without breaking operations</h1>
+              <p class="article-deck">A secure baseline must remain understandable, deployable, and supportable.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>A benchmark can identify useful controls, but a score is not the goal. The goal is a system that exposes fewer useful paths to an attacker while continuing to deliver its service and support recovery.</p>
+
+            <h2>Connect the baseline to a threat</h2>
+            <p>Prioritize identity, remote administration, unnecessary services, privilege boundaries, logging, and protection of sensitive configuration. Understand which attack behavior each setting is meant to prevent or reveal. That context helps when a control conflicts with the workload.</p>
+
+            <p>Do not apply every setting uniformly. A public edge host, build runner, database, and operator workstation have different service contracts and exposure.</p>
+
+            <h2>Test the complete operating path</h2>
+            <p>Validate application behavior, monitoring, backup, patching, configuration management, and emergency access. A setting that protects the host while silently disabling telemetry or recovery creates a new risk.</p>
+
+            <div class="article-callout">
+              <p>Hardening is complete only when the secure configuration and the operational tooling can coexist.</p>
+            </div>
+
+            <h2>Roll out in layers</h2>
+            <p>Start with a test environment, then a small representative production group. Observe denied actions, service health, and support tickets. Expand in stages with a known rollback path. Where possible, build the baseline into images and provisioning rather than repairing drift after launch.</p>
+
+            <p>Use configuration tests to detect regression. A baseline is code: version it, review changes, and connect each exception to an owner and reason.</p>
+
+            <h2>Keep exceptions honest</h2>
+            <p>If a required application cannot support a control, document the specific incompatibility and apply a compensating measure. Restrict network reach, tighten identity, add monitoring, or isolate the workload. Give the exception a review date tied to an upgrade or replacement plan.</p>
+
+            <p>Measure the baseline by outcome. Track unexpected service changes, controls that repeatedly drift, exceptions that outlive their plans, and attacker behaviors the configuration should prevent. A benchmark percentage can summarize progress, but operational evidence shows whether the controls are carrying their intended weight.</p>
+
+            <p>Good hardening reduces attack surface without turning the system into an artifact only its author can operate. It is repeatable, observable, and resilient enough to survive both an attacker and an ordinary maintenance window.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../cloud-cost-is-an-architecture-signal/">Next note: Cloud cost is an architecture signal <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="A useful asset inventory connects discovered resources to ownership, purpose, exposure, identity, and lifecycle.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Inventory is a security control — Derryle Gogel">
+    <meta property="og:description" content="You cannot protect a resource that exists only as an unexplained line in a scan.">
+    <meta property="og:url" content="https://www.derryle.com/blog/inventory-is-a-security-control/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2021-10-14">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/inventory-is-a-security-control/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Inventory is a security control",
+        "description": "You cannot protect a resource that exists only as an unexplained line in a scan.",
+        "datePublished": "2021-10-14",
+        "dateModified": "2021-10-14",
+        "mainEntityOfPage": "https://www.derryle.com/blog/inventory-is-a-security-control/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Inventory Is a Security Control — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Cybersecurity<time datetime="2021-10-14">October 14, 2021</time></p>
+            <div>
+              <h1>Inventory is a security control</h1>
+              <p class="article-deck">You cannot protect a resource that exists only as an unexplained line in a scan.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>Inventory is sometimes reduced to a list of devices. A security-useful inventory connects a resource to the decisions around it: who owns it, why it exists, what it can reach, which identity controls it, what data it handles, and when it should disappear.</p>
+
+            <h2>Discover from more than one direction</h2>
+            <p>Combine declared sources such as infrastructure code, cloud accounts, configuration management, endpoint management, and service catalogs with observed sources such as network, DNS, identity, and billing data. Each source has blind spots. Differences between them are valuable findings.</p>
+
+            <p>A resource in the cloud API but not the service catalog may lack ownership. A hostname in DNS but not in the platform may be stale. An active identity with no associated workload may be an abandoned trust path.</p>
+
+            <h2>Require purpose and ownership</h2>
+            <p>Ownership needs a maintained team or service, not the individual who created the resource. Purpose should explain the business or technical role well enough to guide exposure, patching, retention, and incident response.</p>
+
+            <div class="article-callout">
+              <p>An unknown asset is not only missing documentation; it is missing a decision-maker during the incident.</p>
+            </div>
+
+            <h2>Track relationships</h2>
+            <p>Connect workloads to repositories, images, identities, data stores, network paths, and deployment pipelines. A vulnerability becomes actionable when responders can identify the service, owner, exposure, and safe change path.</p>
+
+            <p>Freshness matters. Prefer automated updates from authoritative systems and make stale records visible. If lifecycle is known, encode expiration for temporary resources and review long-lived exceptions.</p>
+
+            <h2>Use the inventory to answer questions</h2>
+            <p>Can the organization find every internet-exposed service? Every workload using a vulnerable image? Every production role without an owner? Every system that depends on a retiring certificate authority? If the inventory cannot support real response questions, it is probably collecting fields rather than creating control.</p>
+
+            <p>The list is the beginning. Security value comes from the context that lets a team make a timely, defensible change.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../build-rollback-before-release/">Next note: Build the rollback before the release <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

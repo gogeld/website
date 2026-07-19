@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="A dependable runbook is versioned, testable operational code that explains triggers, safe actions, verification, and escalation.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The runbook is part of the system — Derryle Gogel">
+    <meta property="og:description" content="If recovery depends on a document, that document belongs inside the reliability design.">
+    <meta property="og:url" content="https://www.derryle.com/blog/runbook-is-part-of-the-system/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2023-01-19">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/runbook-is-part-of-the-system/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The runbook is part of the system",
+        "description": "If recovery depends on a document, that document belongs inside the reliability design.",
+        "datePublished": "2023-01-19",
+        "dateModified": "2023-01-19",
+        "mainEntityOfPage": "https://www.derryle.com/blog/runbook-is-part-of-the-system/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>The Runbook Is Part of the System — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems engineering<time datetime="2023-01-19">January 19, 2023</time></p>
+            <div>
+              <h1>The runbook is part of the system</h1>
+              <p class="article-deck">If recovery depends on a document, that document belongs inside the reliability design.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>A runbook is often treated as a final documentation task. In practice, it is an operational interface between the system and the person trying to recover it. That interface deserves design, testing, and maintenance.</p>
+
+            <h2>Begin with the trigger</h2>
+            <p>State the observable condition that makes the runbook relevant. Include the user impact, confirming signals, and conditions that point to a different procedure. An operator should know why this path applies before running its first command.</p>
+
+            <h2>Explain intent around action</h2>
+            <p>Commands without context are dangerous under pressure. Describe what each step changes, the expected output, how long it may take, and when to stop. Mark destructive or irreversible actions clearly and provide the safer diagnostic step first.</p>
+
+            <div class="article-callout">
+              <p>A useful runbook narrows decisions without hiding the consequences of the action it recommends.</p>
+            </div>
+
+            <h2>Build verification into every phase</h2>
+            <p>Recovery is not complete because a command succeeded. Check the service-level outcome, dependent systems, queued work, and telemetry. If a restart clears the symptom, preserve enough evidence to continue the root-cause investigation.</p>
+
+            <p>Include escalation criteria: lack of expected improvement, unexpected data state, a security indicator, or elapsed time beyond the safe window. Names change; route escalation through maintained roles and channels.</p>
+
+            <h2>Keep it next to change</h2>
+            <p>Version the runbook, review it with service changes, and link it directly from the alert or service catalog. Prefer executable checks and automation for repeatable actions, but retain explanation so an operator can reason about failure.</p>
+
+            <p>Make access part of the test. A perfect procedure in an unavailable wiki, behind a failed identity provider, or dependent on permissions the on-call role does not have is not ready. Critical recovery instructions need a controlled path that remains reachable during the failures they address.</p>
+
+            <p>Exercise the procedure with someone who did not write it. Their questions reveal missing permissions, hidden knowledge, and ambiguous language. Feed incident discoveries back into the document while the context is fresh.</p>
+
+            <p>A runbook that works is part of the system’s recovery capability. A runbook that is stale is an untested dependency—and should be treated like one.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../segment-by-consequence/">Next note: Segment by consequence <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

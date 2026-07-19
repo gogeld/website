@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Reliable delivery designs rollback, compatibility, data changes, verification, and decision thresholds before a release begins.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Build the rollback before the release — Derryle Gogel">
+    <meta property="og:description" content="A rollback plan written during an incident is a hypothesis under pressure.">
+    <meta property="og:url" content="https://www.derryle.com/blog/build-rollback-before-release/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2021-07-15">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/build-rollback-before-release/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Build the rollback before the release",
+        "description": "A rollback plan written during an incident is a hypothesis under pressure.",
+        "datePublished": "2021-07-15",
+        "dateModified": "2021-07-15",
+        "mainEntityOfPage": "https://www.derryle.com/blog/build-rollback-before-release/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Build the Rollback Before the Release — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems engineering<time datetime="2021-07-15">July 15, 2021</time></p>
+            <div>
+              <h1>Build the rollback before the release</h1>
+              <p class="article-deck">A rollback plan written during an incident is a hypothesis under pressure.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>Deployment automation makes moving forward fast. Recovery requires equal attention. The previous artifact may still exist, but that does not mean the previous system can safely return after schemas, messages, caches, configuration, and client behavior have changed.</p>
+
+            <h2>Define the decision threshold</h2>
+            <p>Before release, choose the signals and time window that trigger a pause or rollback. Use user outcomes—errors, latency, failed transactions, saturation, or data integrity—not only deployment health. Name who can make the decision and avoid requiring a committee while impact grows.</p>
+
+            <h2>Design compatibility into change</h2>
+            <p>Prefer additive database changes, tolerant readers, and staged removal. Separate schema migration from application cutover when the risk justifies it. Version messages and APIs so old and new components can coexist during a gradual rollout.</p>
+
+            <p>For irreversible data transformation, rollback may mean rolling forward with a fix or restoring from a protected point. State that honestly before the change.</p>
+
+            <div class="article-callout">
+              <p>“Redeploy the old version” is not a rollback plan until compatibility and state have been tested.</p>
+            </div>
+
+            <h2>Limit the first consequence</h2>
+            <p>Canary releases, small deployment rings, and feature flags reduce the population affected by a wrong assumption. Keep the control path independent enough that a broken release cannot prevent the flag change or traffic shift needed to recover.</p>
+
+            <p>Record the exact artifact, configuration, infrastructure version, and feature state that made up the previous good release. A label such as “last stable” is useful only if it cannot drift.</p>
+
+            <h2>Practice the reverse path</h2>
+            <p>Exercise rollback in an environment that includes realistic data and dependencies. Measure duration, verify queued work, confirm telemetry, and check that operators have permission. After a production rollback, preserve evidence and fix the recovery path as carefully as the original defect.</p>
+
+            <p>Rollback is part of delivery, not an admission that delivery failed. Building it first turns recovery from improvisation into a known engineering operation.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../">Return to all field notes <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

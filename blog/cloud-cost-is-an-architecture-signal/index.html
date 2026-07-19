@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Cloud cost can reveal scaling assumptions, idle capacity, data movement, weak ownership, and architectural coupling.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cloud cost is an architecture signal — Derryle Gogel">
+    <meta property="og:description" content="A surprising bill is often describing the system more honestly than its diagram does.">
+    <meta property="og:url" content="https://www.derryle.com/blog/cloud-cost-is-an-architecture-signal/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2022-01-20">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/cloud-cost-is-an-architecture-signal/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Cloud cost is an architecture signal",
+        "description": "A surprising bill is often describing the system more honestly than its diagram does.",
+        "datePublished": "2022-01-20",
+        "dateModified": "2022-01-20",
+        "mainEntityOfPage": "https://www.derryle.com/blog/cloud-cost-is-an-architecture-signal/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Cloud Cost Is an Architecture Signal — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Cloud engineering<time datetime="2022-01-20">January 20, 2022</time></p>
+            <div>
+              <h1>Cloud cost is an architecture signal</h1>
+              <p class="article-deck">A surprising bill is often describing the system more honestly than its diagram does.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>Cloud cost is usually treated as a finance outcome. It is also runtime telemetry. The bill records how long resources lived, where data moved, which services scaled, and whether anyone owned what was created.</p>
+
+            <h2>Measure a unit that matters</h2>
+            <p>Total spend rises when the business grows. Cost per transaction, tenant, build, stored object, or active user shows whether the architecture is becoming more or less efficient. Choose a unit close enough to the service that engineers can connect a change to its effect.</p>
+
+            <p>Tagging helps, but ownership should also exist in account, project, repository, and deployment structure. A label nobody maintains is not an operating model.</p>
+
+            <h2>Follow data movement</h2>
+            <p>Unexpected transfer cost often reveals chatty service boundaries, poorly placed workloads, repeated downloads, or an analytics pattern moving far more data than it processes. These can also be performance and reliability problems.</p>
+
+            <div class="article-callout">
+              <p>Cost anomalies are architecture observations with dollar signs attached.</p>
+            </div>
+
+            <h2>Separate readiness from idleness</h2>
+            <p>Some idle capacity buys recovery time and predictable performance. Some exists because environments never turn off, autoscaling floors are guessed, or old resources have no owner. Make the reliability purpose explicit before optimizing it away.</p>
+
+            <p>Review non-production schedules, abandoned storage, snapshots, public addresses, load balancers, and oversized databases. Automate expiration for temporary environments and make extension a deliberate choice.</p>
+
+            <h2>Put feedback near the change</h2>
+            <p>Show estimated impact during infrastructure review, then compare it with actual behavior after release. Alert on meaningful deviation rather than only monthly budget thresholds. Give service owners a view they can interpret without translating the entire provider invoice.</p>
+
+            <p>Cost controls and security controls often reinforce each other. Expiring abandoned environments removes forgotten exposure. Narrowing data movement reduces both transfer charges and unnecessary trust paths. Clear ownership improves incident response while making waste actionable. The same architecture habits create several kinds of resilience.</p>
+
+            <p>Cost optimization should not become indiscriminate reduction. The useful question is what the spend says about demand, design, and ownership—and whether that trade is intentional.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../inventory-is-a-security-control/">Next note: Inventory is a security control <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

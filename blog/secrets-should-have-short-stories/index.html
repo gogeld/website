@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="A secret should have a short, explainable lifecycle: created for a purpose, delivered narrowly, rotated predictably, and removed on time.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Secrets should have short stories — Derryle Gogel">
+    <meta property="og:description" content="Long-lived credentials accumulate copies, dependencies, and uncertainty.">
+    <meta property="og:url" content="https://www.derryle.com/blog/secrets-should-have-short-stories/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2024-04-11">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/secrets-should-have-short-stories/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Secrets should have short stories",
+        "description": "Long-lived credentials accumulate copies, dependencies, and uncertainty.",
+        "datePublished": "2024-04-11",
+        "dateModified": "2024-04-11",
+        "mainEntityOfPage": "https://www.derryle.com/blog/secrets-should-have-short-stories/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Secrets Should Have Short Stories — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Cybersecurity<time datetime="2024-04-11">April 11, 2024</time></p>
+            <div>
+              <h1>Secrets should have short stories</h1>
+              <p class="article-deck">Long-lived credentials accumulate copies, dependencies, and uncertainty.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>Every secret tells a story. It was created by someone, delivered through a path, copied into one or more systems, used by an identity, and eventually replaced—or forgotten. The longer that story becomes, the harder it is to know who can still read it and what will break when it changes.</p>
+
+            <h2>Prefer identity over possession</h2>
+            <p>When a platform can issue short-lived credentials from workload identity, use that path. The workload proves what it is and receives only the access it needs for a limited time. There is no static value to place in a repository, image, deployment variable, or operator notebook.</p>
+
+            <p>Static secrets remain necessary in some integrations. Treat them as exceptions with a named owner, purpose, storage location, consumers, and expiration expectation.</p>
+
+            <h2>Make delivery narrow and observable</h2>
+            <p>A secret manager improves storage but does not automatically improve use. Limit which runtime identity can retrieve each value. Avoid exposing secrets as broad environment state when a process-specific or file-mounted delivery method is available. Log retrieval without logging the value itself.</p>
+
+            <div class="article-callout">
+              <p>The safest secret is the one that is never created. The next safest is short-lived, narrowly delivered, and easy to revoke.</p>
+            </div>
+
+            <h2>Rotation is a systems test</h2>
+            <p>Rotation fails when a hidden consumer still depends on the old value. Automate the sequence, support overlap where the protocol allows it, and verify consumers before revocation. A credential that cannot be rotated safely is revealing tight coupling in the system.</p>
+
+            <p>Practice emergency rotation separately from routine rotation. The emergency path should not depend on the same potentially compromised identity or pipeline.</p>
+
+            <h2>Delete the story’s loose ends</h2>
+            <p>Removing the source value is not enough if copies remain in build logs, old artifacts, shell history, backups, or tickets. Prevention is more reliable than cleanup: mask pipeline output, scan changes before merge, restrict artifact retention, and teach tooling to reject known credential patterns.</p>
+
+            <p>A good secret lifecycle is intentionally boring. Creation is controlled, use is narrow, rotation is routine, and expiration is expected. Short stories are easier to verify.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../golden-images-need-expiration-dates/">Next note: Golden images need expiration dates <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

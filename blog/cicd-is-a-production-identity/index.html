@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="CI/CD systems are production identities whose triggers, credentials, artifacts, and permissions require deliberate security boundaries.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CI/CD is a production identity — Derryle Gogel">
+    <meta property="og:description" content="A deployment pipeline can change production, so its trust path is part of production.">
+    <meta property="og:url" content="https://www.derryle.com/blog/cicd-is-a-production-identity/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2022-07-14">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/cicd-is-a-production-identity/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CI/CD is a production identity",
+        "description": "A deployment pipeline can change production, so its trust path is part of production.",
+        "datePublished": "2022-07-14",
+        "dateModified": "2022-07-14",
+        "mainEntityOfPage": "https://www.derryle.com/blog/cicd-is-a-production-identity/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>CI/CD Is a Production Identity — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Cloud security<time datetime="2022-07-14">July 14, 2022</time></p>
+            <div>
+              <h1>CI/CD is a production identity</h1>
+              <p class="article-deck">A deployment pipeline can change production, so its trust path is part of production.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>A pipeline is often described as automation, but security should also see an identity. It reads source, creates artifacts, retrieves dependencies, assumes cloud roles, and changes running systems. Its effective privilege may exceed that of most human administrators.</p>
+
+            <h2>Protect what can trigger authority</h2>
+            <p>Production deployment should depend on a protected, reviewed state. Restrict who can change workflow definitions, branch protections, build dependencies, and reusable actions. Treat a change to pipeline code with the same care as a change to the application it deploys.</p>
+
+            <p>Pull requests from untrusted contexts should not receive production secrets or execute on persistent privileged runners. Separate build and deploy stages so code compilation does not automatically inherit release authority.</p>
+
+            <h2>Use short-lived, specific credentials</h2>
+            <p>Prefer federation from the pipeline to the target platform. Bind access to repository, branch or environment, workflow, and audience. Issue a credential only for the duration of the job and grant it the operations that deployment actually requires.</p>
+
+            <div class="article-callout">
+              <p>The pipeline should prove which trusted workflow it is, not present a shared secret that any copied process can reuse.</p>
+            </div>
+
+            <h2>Make artifacts immutable and traceable</h2>
+            <p>Build once, record provenance, scan, sign, and promote the same digest. A release should connect back to a reviewed commit and a specific workflow run. Protect the registry from tag replacement and limit which identity can publish to trusted locations.</p>
+
+            <p>Runner isolation matters too. Ephemeral workers reduce persistence between jobs, while network boundaries limit which internal services a compromised build can reach. Keep deployment workers separate from jobs that execute less-trusted code, and destroy job state instead of relying on cleanup to find everything.</p>
+
+            <h2>Observe the deployment identity</h2>
+            <p>Log role assumptions, target environments, artifact digests, approvals, and infrastructure changes. Alert when the pipeline acts outside its normal repository, time, region, or operation pattern. Keep an emergency disable path that does not rely on the pipeline itself.</p>
+
+            <p>CI/CD is a powerful production principal with software attached. Designing it that way makes source review, artifact integrity, and cloud permissions part of one coherent trust path.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../hardening-without-breaking-operations/">Next note: Hardening without breaking operations <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

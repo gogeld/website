@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Golden images are controlled infrastructure artifacts, but only if their provenance, testing, refresh cadence, and retirement are engineered.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Golden images need expiration dates — Derryle Gogel">
+    <meta property="og:description" content="A trusted image should become untrusted when it is too old to explain.">
+    <meta property="og:url" content="https://www.derryle.com/blog/golden-images-need-expiration-dates/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2024-01-18">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/golden-images-need-expiration-dates/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Golden images need expiration dates",
+        "description": "A trusted image should become untrusted when it is too old to explain.",
+        "datePublished": "2024-01-18",
+        "dateModified": "2024-01-18",
+        "mainEntityOfPage": "https://www.derryle.com/blog/golden-images-need-expiration-dates/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Golden Images Need Expiration Dates — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems engineering<time datetime="2024-01-18">January 18, 2024</time></p>
+            <div>
+              <h1>Golden images need expiration dates</h1>
+              <p class="article-deck">A trusted image should become untrusted when it is too old to explain.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>A golden image promises consistency: the operating system, baseline configuration, agents, and common packages arrive together as one tested artifact. Without a lifecycle, that consistency can simply reproduce the same old risk everywhere.</p>
+
+            <h2>Build from declared inputs</h2>
+            <p>The image should be reproducible from versioned configuration. Pin the base source, record package repositories, capture build logs, and produce a manifest or software bill of materials. Sign the result and keep provenance with the artifact.</p>
+
+            <p>A manually repaired image is no longer golden. Put the repair into the build definition and issue a new artifact.</p>
+
+            <h2>Test behavior, not only packages</h2>
+            <p>Vulnerability scanning is necessary, but it does not prove the image boots, registers with management, emits expected telemetry, enforces hardening, or supports the application. Test those outcomes in an isolated environment before promotion.</p>
+
+            <div class="article-callout">
+              <p>An image is trusted because the pipeline can explain and reproduce it—not because its name includes “approved.”</p>
+            </div>
+
+            <h2>Attach an expiration policy</h2>
+            <p>Set a maximum age based on patching expectations and exposure. Prevent new workloads from launching expired versions while allowing a controlled emergency override. Track existing instances separately; blocking new use does not replace the work of refreshing what is already running.</p>
+
+            <p>Build frequently enough that the path stays healthy. An image pipeline used only during critical patch events is likely to fail precisely when speed matters.</p>
+
+            <h2>Replace instead of preserving</h2>
+            <p>Images work best with an immutable operating model. Deploy the new version, verify service health, shift work, and retire the old instances. Long-lived hosts that accumulate manual changes weaken the value of the image and make rollback harder to understand.</p>
+
+            <p>Track which workloads still use each image version and make retirement visible to their owners. If an application cannot move with the normal cadence, capture the dependency blocking it and isolate the exception. Age should create an engineering signal, not merely a compliance finding.</p>
+
+            <p>The expiration date is a design constraint. It keeps provenance recent, rebuilds normal, and drift temporary. A golden image should be a current statement of intent, not a historical artifact with a trusted label.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../observability-starts-with-a-question/">Next note: Observability starts with a question <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

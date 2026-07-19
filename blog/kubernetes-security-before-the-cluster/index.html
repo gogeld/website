@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Kubernetes security begins in source control, artifact production, workload identity, and platform defaults before a pod reaches the cluster.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Kubernetes security begins before the cluster — Derryle Gogel">
+    <meta property="og:description" content="Runtime policy cannot repair every unsafe decision made earlier in the delivery path.">
+    <meta property="og:url" content="https://www.derryle.com/blog/kubernetes-security-before-the-cluster/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2023-07-13">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/kubernetes-security-before-the-cluster/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Kubernetes security begins before the cluster",
+        "description": "Runtime policy cannot repair every unsafe decision made earlier in the delivery path.",
+        "datePublished": "2023-07-13",
+        "dateModified": "2023-07-13",
+        "mainEntityOfPage": "https://www.derryle.com/blog/kubernetes-security-before-the-cluster/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Kubernetes Security Begins Before the Cluster — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Cloud security<time datetime="2023-07-13">July 13, 2023</time></p>
+            <div>
+              <h1>Kubernetes security begins before the cluster</h1>
+              <p class="article-deck">Runtime policy cannot repair every unsafe decision made earlier in the delivery path.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>By the time a workload reaches admission control, much of its security posture is already decided. Source permissions shaped the code. The build system chose the dependencies. The pipeline created the artifact. The platform template selected identity, network, and runtime defaults.</p>
+
+            <h2>Protect the path to the artifact</h2>
+            <p>Require review on deployment code, isolate build identities, pin dependencies, and produce immutable artifacts. Scan images, but also preserve provenance so the cluster can distinguish an approved build from an image that merely has the expected name.</p>
+
+            <p>Promote the same digest between environments. Rebuilding for production creates a new artifact and a new set of assumptions.</p>
+
+            <h2>Make the safe workload easy</h2>
+            <p>Provide maintained templates with a non-root user, read-only filesystem where practical, resource requests and limits, health probes, restricted capabilities, and a dedicated service account. Teams should receive these controls by using the normal platform path.</p>
+
+            <div class="article-callout">
+              <p>The platform should produce a defensible workload before policy has to reject an unsafe one.</p>
+            </div>
+
+            <h2>Keep identities small</h2>
+            <p>A namespace is not an identity boundary by itself. Give each workload a purpose-built service account and limit both Kubernetes RBAC and cloud permissions. Disable automatic token mounting when it is not needed. Prefer short-lived workload identity over static cloud credentials.</p>
+
+            <p>Network policy should follow expected communication, not broad namespace membership. Start with the services a workload must reach and add explicit paths rather than assuming internal traffic is trustworthy.</p>
+
+            <h2>Use admission as the final guardrail</h2>
+            <p>Admission policy is valuable for preventing privileged containers, untrusted registries, missing security context, or unapproved host access. Keep messages specific and test the policy against real delivery workflows before enforcement.</p>
+
+            <p>Runtime detection completes the picture. Watch for unexpected process execution, identity use, network destinations, and changes to sensitive resources. Kubernetes security is a delivery-system property, and the cluster is one important layer of it.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../patching-is-dependency-management/">Next note: Patching is dependency management <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

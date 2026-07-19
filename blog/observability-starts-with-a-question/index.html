@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Useful observability starts with operational questions, then chooses telemetry that shortens the path from symptom to explanation.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Observability starts with a question — Derryle Gogel">
+    <meta property="og:description" content="Collecting more telemetry is not the same as making a system easier to understand.">
+    <meta property="og:url" content="https://www.derryle.com/blog/observability-starts-with-a-question/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2023-10-12">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/observability-starts-with-a-question/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Observability starts with a question",
+        "description": "Collecting more telemetry is not the same as making a system easier to understand.",
+        "datePublished": "2023-10-12",
+        "dateModified": "2023-10-12",
+        "mainEntityOfPage": "https://www.derryle.com/blog/observability-starts-with-a-question/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Observability Starts with a Question — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Systems engineering<time datetime="2023-10-12">October 12, 2023</time></p>
+            <div>
+              <h1>Observability starts with a question</h1>
+              <p class="article-deck">Collecting more telemetry is not the same as making a system easier to understand.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>It is easy to instrument what a framework exposes and difficult to decide what an operator will need during an unfamiliar failure. The first approach creates dashboards. The second creates understanding.</p>
+
+            <h2>Begin with a user outcome</h2>
+            <p>Ask whether a user can complete the important transaction: authenticate, submit an order, retrieve a record, or receive a result. Then work backward through the dependencies that make the outcome possible.</p>
+
+            <p>This produces signals with context. Request success, latency, queue age, and dependency errors say more than a wall of component utilization. Resource metrics still matter, but they explain constraints after the service-level symptom establishes why anyone should care.</p>
+
+            <h2>Preserve useful dimensions</h2>
+            <p>Telemetry should let an operator separate behavior by region, version, dependency, operation, and error class without exposing sensitive data or creating unbounded cardinality. Choose those dimensions deliberately; adding them during an incident is too late.</p>
+
+            <div class="article-callout">
+              <p>Instrumentation earns its cost when it helps reject a hypothesis, not merely when it proves the system emitted data.</p>
+            </div>
+
+            <h2>Connect the evidence</h2>
+            <p>Metrics identify shape and timing. Traces show the path. Logs preserve detailed events. Consistent service names, timestamps, deployment markers, and correlation context let responders move between them without rebuilding the incident timeline by hand.</p>
+
+            <p>Also capture absence. A missing heartbeat, an expected event that never appears, or a queue that stops draining may be the clearest signal in the system.</p>
+
+            <h2>Remove what nobody uses</h2>
+            <p>Observability has an operating cost: storage, query performance, alert fatigue, and cognitive load. Review dashboards and alerts after incidents. Keep the signals that changed a decision. Improve those that almost helped. Retire those that consistently produce no action.</p>
+
+            <p>Use design reviews to ask the future incident questions early. How will we distinguish a bad dependency from a bad release? How will we find one affected tenant without exposing tenant data? What evidence survives if the application is unavailable? The answers should shape instrumentation before launch.</p>
+
+            <p>A good observability practice is a loop between questions and evidence. The system changes, the questions get sharper, and the telemetry follows.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../kubernetes-security-before-the-cluster/">Next note: Kubernetes security begins before the cluster <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>

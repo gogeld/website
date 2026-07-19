@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f4f5f7">
+    <meta name="description" content="Useful segmentation groups systems by consequence and permitted communication rather than by whatever the network diagram inherited.">
+    <meta name="author" content="Derryle Gogel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Segment by consequence — Derryle Gogel">
+    <meta property="og:description" content="A boundary should limit what a compromised identity or workload can reach next.">
+    <meta property="og:url" content="https://www.derryle.com/blog/segment-by-consequence/">
+    <meta property="og:image" content="https://www.derryle.com/assets/social-card.png">
+    <meta property="article:published_time" content="2022-10-13">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.derryle.com/blog/segment-by-consequence/">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Segment by consequence",
+        "description": "A boundary should limit what a compromised identity or workload can reach next.",
+        "datePublished": "2022-10-13",
+        "dateModified": "2022-10-13",
+        "mainEntityOfPage": "https://www.derryle.com/blog/segment-by-consequence/",
+        "author": {"@type": "Person", "name": "Derryle Gogel", "url": "https://www.derryle.com/"}
+      }
+    </script>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../../script.js" defer></script>
+    <title>Segment by Consequence — Derryle Gogel</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation"><a href="../../#about">About</a><a href="../../#capabilities">Capabilities</a><a href="../">Blog</a><a href="../../#contact">Contact</a></nav>
+      </div>
+      <span class="scroll-progress" aria-hidden="true" data-scroll-progress></span>
+    </header>
+
+    <main id="main-content">
+      <header class="article-hero">
+        <div class="shell">
+          <a class="article-back" href="../"><span aria-hidden="true">←</span> All field notes</a>
+          <div class="article-title-grid" data-reveal>
+            <p class="article-label">Network security<time datetime="2022-10-13">October 13, 2022</time></p>
+            <div>
+              <h1>Segment by consequence</h1>
+              <p class="article-deck">A boundary should limit what a compromised identity or workload can reach next.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="article-main">
+        <div class="shell article-layout">
+          <aside class="article-aside" aria-label="Article details"><p>Reading time</p><span>4 minutes</span></aside>
+          <div class="article-prose">
+            <p>Network segments often reflect history: an office, a platform, a subnet that had available address space. Those boundaries may simplify routing while doing little to contain an attacker. Security segmentation needs a different organizing principle.</p>
+
+            <h2>Group by impact and trust</h2>
+            <p>Identify systems that can change production, issue identity, access regulated data, manage backups, or control security tooling. Their compromise has a different consequence from a general application workload, so they should not share the same reachability assumptions.</p>
+
+            <p>Then map the communication that is actually required. Record source identity or workload, destination service, protocol, purpose, and owner. “Internal network” is not a purpose.</p>
+
+            <h2>Control identity and network together</h2>
+            <p>A network rule can limit where traffic travels; application and workload identity determine who is allowed to act. Use both. A reachable service should still authenticate the caller, and a valid identity should not create unrestricted network reach.</p>
+
+            <div class="article-callout">
+              <p>Segmentation is successful when one compromised component has fewer meaningful next moves.</p>
+            </div>
+
+            <h2>Start with high-consequence paths</h2>
+            <p>Perfect microsegmentation across an entire estate is a long project. Begin with administration, identity, build systems, recovery infrastructure, and sensitive data. Restrict management protocols and require controlled access paths with strong authentication and logging.</p>
+
+            <p>For application tiers, observe current flows before enforcing. Classify unexplained traffic instead of automatically approving it. A clean policy is useful only if the service can still operate and responders can understand exceptions.</p>
+
+            <h2>Test the boundary</h2>
+            <p>Configuration review does not prove isolation. From representative workloads, verify that approved flows work and prohibited paths fail. Monitor denied traffic for both attack signals and broken assumptions. Review rules when services change, not only during an annual cleanup.</p>
+
+            <p>The diagram may still show subnets and zones. The security model should show consequences, permitted relationships, and the controls that make lateral movement a series of difficult decisions instead of one flat network.</p>
+
+            <div class="article-end">
+              <a class="note-link" href="../cicd-is-a-production-identity/">Next note: CI/CD is a production identity <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="../../" aria-label="Derryle Gogel, home"><span class="brand-mark" aria-hidden="true">DG</span><span class="brand-name">Derryle Gogel</span></a>
+        <p>Annapolis, Maryland · East Coast</p><p>© <span data-year>2026</span> Derryle Gogel</p>
+      </div>
+    </footer>
+  </body>
+</html>
